@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>සම්පූර්ණ ජීවී වර්ගීකරණ ක්‍රීඩාව</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 { color: #2c3e50; margin-bottom: 5px; }
+        h2 { color: #7f8c8d; font-size: 16px; margin-top: 0; }
+        .score-board {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        #card-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 35px;
+            min-height: 90px;
+            flex-wrap: wrap;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: grab;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 14px;
+        }
+        .section-title {
+            width: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 25px 0 10px 0;
+            padding: 5px;
+            border-bottom: 3px solid #34495e;
+            color: #34495e;
+            text-align: left;
+        }
+        .grid-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .bin {
+            border: 3px dashed #bdc3c7;
+            border-radius: 10px;
+            width: 190px;
+            min-height: 150px;
+            padding: 10px;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+        .bin h3 {
+            margin-top: 0;
+            font-size: 15px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        /* වර්ණ ගැන්වීම් */
+        .kingdom-section .bin h3 { color: #2980b9; }
+        .kingdom-section .bin.hover { background-color: #ebf5fb; border-color: #2980b9; }
+
+        .invert-section .bin h3 { color: #9b59b6; }
+        .invert-section .bin.hover { background-color: #f5eef8; border-color: #9b59b6; }
+        
+        .vert-section .bin h3 { color: #e67e22; }
+        .vert-section .bin.hover { background-color: #fdf2e9; border-color: #e67e22; }
+    </style>
+</head>
+<body>
+
+    <h1>ජීවීන් වර්ගීකරණ ක්‍රීඩාව</h1>
+    <h2>ජීවී කාඩ්පත් අදාළ වන නිවැරදිම රාජධානිය, වංශය හෝ වර්ගය වෙත ඇදගෙන ගොස් අතහරින්න.</h2>
+    
+    <div class="score-board">ලකුණු: <span id="score">0</span></div>
+
+    <!-- සියලුම ජීවී කාඩ්පත් -->
+    <div id="card-container"></div>
+
+    <!-- ප්‍රධාන රාජධානි කොටස -->
+    <div class="section-title">ප්‍රධාන රාජධානි (Kingdoms)</div>
+    <div class="grid-container kingdom-section">
+        <div class="bin" data-target="Protista"><h3>Protista රාජධානිය</h3></div>
+        <div class="bin" data-target="Fungi"><h3>Fungi රාජධානිය</h3></div>
+        <div class="bin" data-target="Plantae"><h3>Plantae රාජධානිය</h3></div>
+    </div>
+
+    <!-- අපෘෂ්ඨවංශීන් කොටස -->
+    <div class="section-title">සත්ව රාජධානිය - අපෘෂ්ඨවංශීන් (Invertebrates)</div>
+    <div class="grid-container invert-section">
+        <div class="bin" data-target="Cnidaria"><h3>Cnidaria<br>(නිඩාරියා)</h3></div>
+        <div class="bin" data-target="Annelida"><h3>Annelida<br>(ඇනලිඩා)</h3></div>
+        <div class="bin" data-target="Mollusca"><h3>Mollusca<br>(මොලුස්කා)</h3></div>
+        <div class="bin" data-target="Arthropoda"><h3>Arthropoda<br>(ආත්‍රපෝඩා)</h3></div>
+    </div>
+
+    <!-- පෘෂ්ඨවංශීන් කොටස -->
+    <div class="section-title">සත්ව රාජධානිය - පෘෂ්ඨවංශීන් (Vertebrates)</div>
+    <div class="grid-container vert-section">
+        <div class="bin" data-target="Pisces"><h3>Pisces<br>(මත්ස්‍ය වර්ගය)</h3></div>
+        <div class="bin" data-target="Amphibia"><h3>Amphibia<br>(උභයජීවී වර්ගය)</h3></div>
+        <div class="bin" data-target="Reptilia"><h3>Reptilia<br>(උරග වර්ගය)</h3></div>
+        <div class="bin" data-target="Aves"><h3>Aves<br>(පක්ෂි වර්ගය)</h3></div>
+        <div class="bin" data-target="Mammalia"><h3>Mammalia<br>(ක්ෂීරපායී වර්ගය)</h3></div>
+    </div>
+
+    <script>
+        // ඒකාබද්ධ කරන ලද සම්පූර්ණ ජීවී දත්ත පද්ධතිය
+        const allOrganisms = [
+            // ප්‍රධාන රාජධානි සඳහා ජීවීන්
+            { name: "අල්වා (Ulva)", group: "Protista" },
+            { name: "ඇමීබා (Amoeba)", group: "Protista" },
+            { name: "පැරමීසියම් (Paramecium)", group: "Protista" },
+            { name: "හතු (Mushrooms)", group: "Fungi" },
+            { name: "පැණි මුහුන් / යීස්ට්", group: "Fungi" },
+            { name: "සැල්ජෙනෙල්ලා (Salgenella)", group: "Plantae" },
+            { name: "පොගොනේටම් (Pogonetum)", group: "Plantae" },
+            { name: "අඹ ගස (Mango Tree)", group: "Plantae" },
+            { name: "මීවන (Fern)", group: "Plantae" },
+            
+            // සත්ව රාජධානියේ අපෘෂ්ඨවංශීන්
+            { name: "හයිඩ්‍රා (Hydra)", group: "Cnidaria" },
+            { name: "ජෙලිෆිෂ් (Jellyfish)", group: "Cnidaria" },
+            { name: "ගැඩවිලා (Earthworm)", group: "Annelida" },
+            { name: "කූඩැල්ලා (Leech)", group: "Annelida" },
+            { name: "ගොළුබෙල්ලා (Snail)", group: "Mollusca" },
+            { name: "දැල්ලා (Squid)", group: "Mollusca" },
+            { name: "මී මැස්සා (Honey Bee)", group: "Arthropoda" },
+            { name: "පත්තෑයා (Centipede)", group: "Arthropoda" },
+            
+            // සත්ව රාජධානියේ පෘෂ්ඨවංශීන්
+            { name: "තලපතා (Sailfish)", group: "Pisces" },
+            { name: "මෝරා (Shark)", group: "Pisces" },
+            { name: "ගෙම්බා (Frog)", group: "Amphibia" },
+            { name: "ගෙඩිගෙම්බා (Toad)", group: "Amphibia" },
+            { name: "හූනා (Gecko)", group: "Reptilia" },
+            { name: "කිඹුලා (Crocodile)", group: "Reptilia" },
+            { name: "මයිනා (Myna)", group: "Aves" },
+            { name: "වවුලා (Bat)", group: "Mammalia" },
+            { name: "තල්මසා (Whale)", group: "Mammalia" },
+            { name: "මනුෂ්‍යයා (Human)", group: "Mammalia" },
+            { name: "සිංහයා (Lion)", group: "Mammalia" }
+        ];
+
+        let score = 0;
+        const cardContainer = document.getElementById('card-container');
+        const bins = document.querySelectorAll('.bin');
+        const scoreDisplay = document.getElementById('score');
+
+        // කාඩ්පත් අහඹු ලෙස කලවම් කිරීම
+        allOrganisms.sort(() => Math.random() - 0.5);
+
+        // කාඩ්පත් තිරය මත නිර්මාණය කිරීම
+        allOrganisms.forEach((org, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerText = org.name;
+            card.draggable = true;
+            card.id = 'org-' + index;
+            card.setAttribute('data-group', org.group);
+            
+            card.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', e.target.id);
+            });
+
+            cardContainer.appendChild(card);
+        });
+
+        // Drop ක්‍රියාවලි සැකසීම
+        bins.forEach(bin => {
+            bin.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                bin.classList.add('hover');
+            });
+
+            bin.addEventListener('dragleave', () => {
+                bin.classList.remove('hover');
+            });
+
+            bin.addEventListener('drop', (e) => {
+                e.preventDefault();
+                bin.classList.remove('hover');
+                
+                const cardId = e.dataTransfer.getData('text/plain');
+                const card = document.getElementById(cardId);
+                
+                const correctGroup = card.getAttribute('data-group');
+                const targetGroup = bin.getAttribute('data-target');
+
+                if (correctGroup === targetGroup) {
+                    bin.appendChild(card);
+                    card.draggable = false;
+                    card.style.backgroundColor = '#2ecc71'; // නිවැරදි නම් කොළ පැහැ වේ
+                    card.style.cursor = 'default';
+                    score += 10;
+                    scoreDisplay.innerText = score;
+                    
+                    if(cardContainer.children.length === 0) {
+                        setTimeout(() => alert('නියමයි! ඔබ සියලුම ජීවීන් නිවැරදිව වර්ගීකරණය කර අවසන් කළා. මුළු ලකුණු: ' + score), 300);
+                    }
+                } else {
+                    alert('වැරදියි! එම ජීවියා අදාළ වර්ගීකරණ කාණ්ඩයට අයත් නොවේ. නැවත උත්සාහ කරන්න.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
