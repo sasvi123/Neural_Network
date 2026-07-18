@@ -217,6 +217,12 @@
                         setTimeout(() => alert('නියමයි! ඔබ සියලුම ජීවීන් නිවැරදිව වර්ගීකරණය කර අවසන් කළා. මුළු ලකුණු: ' + score), 300);
                     }
                 } else {
+                    bin.appendChild(card);
+                    card.draggable = false;
+                    card.style.backgroundColor = '#e74c3c'; // වැරදි නම් රතු පැහැ වේ
+                    card.style.cursor = 'default';
+                    score -= 5;
+                    scoreDisplay.innerText = score;
                     alert('වැරදියි! එම ජීවියා අදාළ වර්ගීකරණ කාණ්ඩයට අයත් නොවේ. නැවත උත්සාහ කරන්න.');
                 }
             });
