@@ -1,232 +1,315 @@
 <!DOCTYPE html>
 <html lang="si">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>සම්පූර්ණ ජීවී වර්ගීකරණ ක්‍රීඩාව</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 { color: #2c3e50; margin-bottom: 5px; }
-        h2 { color: #7f8c8d; font-size: 16px; margin-top: 0; }
-        .score-board {
-            font-size: 22px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #27ae60;
-        }
-        #card-container {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 35px;
-            min-height: 90px;
-            flex-wrap: wrap;
-            background-color: #ffffff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .card {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 6px;
-            cursor: grab;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            font-size: 14px;
-        }
-        .section-title {
-            width: 100%;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 25px 0 10px 0;
-            padding: 5px;
-            border-bottom: 3px solid #34495e;
-            color: #34495e;
-            text-align: left;
-        }
-        .grid-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .bin {
-            border: 3px dashed #bdc3c7;
-            border-radius: 10px;
-            width: 190px;
-            min-height: 150px;
-            padding: 10px;
-            background-color: #fff;
-            transition: all 0.3s;
-        }
-        .bin h3 {
-            margin-top: 0;
-            font-size: 15px;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 5px;
-        }
-        /* වර්ණ ගැන්වීම් */
-        .kingdom-section .bin h3 { color: #2980b9; }
-        .kingdom-section .bin.hover { background-color: #ebf5fb; border-color: #2980b9; }
-
-        .invert-section .bin h3 { color: #9b59b6; }
-        .invert-section .bin.hover { background-color: #f5eef8; border-color: #9b59b6; }
-        
-        .vert-section .bin h3 { color: #e67e22; }
-        .vert-section .bin.hover { background-color: #fdf2e9; border-color: #e67e22; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G.C.E. O/L විද්‍යාව - 9 හා 10 පාඩම් බහුවරණ ප්‍රශ්නාවලිය</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #2563eb;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --correct: #16a34a;
+      --wrong: #dc2626;
+      --border: #e2e8f0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 850px;
+      margin: auto;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+    .mcq-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #fafafa;
+    }
+    .question-title {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      background: #fff;
+      transition: all 0.2s;
+    }
+    .option-label:hover {
+      background: #eff6ff;
+      border-color: var(--secondary);
+    }
+    .option-label input {
+      margin-right: 12px;
+    }
+    .feedback {
+      display: none;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    .btn-submit {
+      display: block;
+      width: 100%;
+      max-width: 250px;
+      margin: 30px auto;
+      padding: 14px;
+      background: var(--primary);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover {
+      background: var(--secondary);
+    }
+    #score-board {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background: #eff6ff;
+      border: 2px solid var(--secondary);
+      border-radius: 8px;
+      margin-top: 25px;
+    }
+    #score-board h2 {
+      margin: 0 0 10px 0;
+      color: var(--primary);
+    }
+  </style>
 </head>
 <body>
 
-    <h1>ජීවීන් වර්ගීකරණ ක්‍රීඩාව</h1>
-    <h2>ජීවී කාඩ්පත් අදාළ වන නිවැරදිම රාජධානිය, වංශය හෝ වර්ගය වෙත ඇදගෙන ගොස් අතහරින්න.</h2>
-    
-    <div class="score-board">ලකුණු: <span id="score">0</span></div>
+<div class="container">
+  <h1>අ.පො.ස. (සා.පෙළ) විද්‍යාව - බහුවරණ ප්‍රශ්නාවලිය</h1>
+  <div class="subtitle">9 වන පාඩම: තාපය | 10 වන පාඩම: විද්‍යුත් උපකරණවල ජවය හා ශක්තිය</div>
 
-    <!-- සියලුම ජීවී කාඩ්පත් -->
-    <div id="card-container"></div>
-
-    <!-- ප්‍රධාන රාජධානි කොටස -->
-    <div class="section-title">ප්‍රධාන රාජධානි (Kingdoms)</div>
-    <div class="grid-container kingdom-section">
-        <div class="bin" data-target="Protista"><h3>Protista රාජධානිය</h3></div>
-        <div class="bin" data-target="Fungi"><h3>Fungi රාජධානිය</h3></div>
-        <div class="bin" data-target="Plantae"><h3>Plantae රාජධානිය</h3></div>
+  <form id="quiz-form">
+    <!-- Q1 -->
+    <div class="mcq-card" id="q1-card">
+      <div class="question-title">1. නිරපේක්ෂ ශුන්‍ය උෂ්ණත්වයට අනුරූප වන සෙල්සියස් උෂ්ණත්ව අගය කුමක්ද?</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q1" value="1"> 0 °C</label>
+        <label class="option-label"><input type="radio" name="q1" value="2"> -100 °C</label>
+        <label class="option-label"><input type="radio" name="q1" value="3"> -273.15 °C</label>
+        <label class="option-label"><input type="radio" name="q1" value="4"> 273.15 °C</label>
+      </div>
+      <div class="feedback" id="q1-fb"></div>
     </div>
 
-    <!-- අපෘෂ්ඨවංශීන් කොටස -->
-    <div class="section-title">සත්ව රාජධානිය - අපෘෂ්ඨවංශීන් (Invertebrates)</div>
-    <div class="grid-container invert-section">
-        <div class="bin" data-target="Cnidaria"><h3>Cnidaria<br>(නිඩාරියා)</h3></div>
-        <div class="bin" data-target="Annelida"><h3>Annelida<br>(ඇනලිඩා)</h3></div>
-        <div class="bin" data-target="Mollusca"><h3>Mollusca<br>(මොලුස්කා)</h3></div>
-        <div class="bin" data-target="Arthropoda"><h3>Arthropoda<br>(ආත්‍රපෝඩා)</h3></div>
+    <!-- Q2 -->
+    <div class="mcq-card" id="q2-card">
+      <div class="question-title">2. තාප ධාරිතාව (Heat Capacity) මනින සම්මත අන්තර්ජාතික (SI) ඒකකය වන්නේ,</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q2" value="1"> J</label>
+        <label class="option-label"><input type="radio" name="q2" value="2"> J K⁻¹</label>
+        <label class="option-label"><input type="radio" name="q2" value="3"> J kg⁻¹ K⁻¹</label>
+        <label class="option-label"><input type="radio" name="q2" value="4"> J kg⁻¹</label>
+      </div>
+      <div class="feedback" id="q2-fb"></div>
     </div>
 
-    <!-- පෘෂ්ඨවංශීන් කොටස -->
-    <div class="section-title">සත්ව රාජධානිය - පෘෂ්ඨවංශීන් (Vertebrates)</div>
-    <div class="grid-container vert-section">
-        <div class="bin" data-target="Pisces"><h3>Pisces<br>(මත්ස්‍ය වර්ගය)</h3></div>
-        <div class="bin" data-target="Amphibia"><h3>Amphibia<br>(උභයජීවී වර්ගය)</h3></div>
-        <div class="bin" data-target="Reptilia"><h3>Reptilia<br>(උරග වර්ගය)</h3></div>
-        <div class="bin" data-target="Aves"><h3>Aves<br>(පක්ෂි වර්ගය)</h3></div>
-        <div class="bin" data-target="Mammalia"><h3>Mammalia<br>(ක්ෂීරපායී වර්ගය)</h3></div>
+    <!-- Q3 -->
+    <div class="mcq-card" id="q3-card">
+      <div class="question-title">3. 2 kg ක ජල ස්කන්ධයක උෂ්ණත්වය 10 K කින් ඉහළ නැංවීමට අවශ්‍ය තාප ප්‍රමාණය කොපමණද? (ජලයේ විශිෂ්ට තාප ධාරිතාව 4200 J kg⁻¹ K⁻¹ වේ)</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q3" value="1"> 42 000 J</label>
+        <label class="option-label"><input type="radio" name="q3" value="2"> 84 000 J</label>
+        <label class="option-label"><input type="radio" name="q3" value="3"> 21 000 J</label>
+        <label class="option-label"><input type="radio" name="q3" value="4"> 8 400 J</label>
+      </div>
+      <div class="feedback" id="q3-fb"></div>
     </div>
 
-    <script>
-        // ඒකාබද්ධ කරන ලද සම්පූර්ණ ජීවී දත්ත පද්ධතිය
-        const allOrganisms = [
-            // ප්‍රධාන රාජධානි සඳහා ජීවීන්
-            { name: "අල්වා (Ulva)", group: "Protista" },
-            { name: "ඇමීබා (Amoeba)", group: "Protista" },
-            { name: "පැරමීසියම් (Paramecium)", group: "Protista" },
-            { name: "හතු (Mushrooms)", group: "Fungi" },
-            { name: "පැණි මුහුන් / යීස්ට්", group: "Fungi" },
-            { name: "සැල්ජෙනෙල්ලා (Salgenella)", group: "Plantae" },
-            { name: "පොගොනේටම් (Pogonetum)", group: "Plantae" },
-            { name: "අඹ ගස (Mango Tree)", group: "Plantae" },
-            { name: "මීවන (Fern)", group: "Plantae" },
-            
-            // සත්ව රාජධානියේ අපෘෂ්ඨවංශීන්
-            { name: "හයිඩ්‍රා (Hydra)", group: "Cnidaria" },
-            { name: "ජෙලිෆිෂ් (Jellyfish)", group: "Cnidaria" },
-            { name: "ගැඩවිලා (Earthworm)", group: "Annelida" },
-            { name: "කූඩැල්ලා (Leech)", group: "Annelida" },
-            { name: "ගොළුබෙල්ලා (Snail)", group: "Mollusca" },
-            { name: "දැල්ලා (Squid)", group: "Mollusca" },
-            { name: "මී මැස්සා (Honey Bee)", group: "Arthropoda" },
-            { name: "පත්තෑයා (Centipede)", group: "Arthropoda" },
-            
-            // සත්ව රාජධානියේ පෘෂ්ඨවංශීන්
-            { name: "තලපතා (Sailfish)", group: "Pisces" },
-            { name: "මෝරා (Shark)", group: "Pisces" },
-            { name: "ගෙම්බා (Frog)", group: "Amphibia" },
-            { name: "ගෙඩිගෙම්බා (Toad)", group: "Amphibia" },
-            { name: "හූනා (Gecko)", group: "Reptilia" },
-            { name: "කිඹුලා (Crocodile)", group: "Reptilia" },
-            { name: "මයිනා (Myna)", group: "Aves" },
-            { name: "වවුලා (Bat)", group: "Mammalia" },
-            { name: "තල්මසා (Whale)", group: "Mammalia" },
-            { name: "මනුෂ්‍යයා (Human)", group: "Mammalia" },
-            { name: "සිංහයා (Lion)", group: "Mammalia" }
-        ];
+    <!-- Q4 -->
+    <div class="mcq-card" id="q4-card">
+      <div class="question-title">4. අවස්ථා විපර්යාසයකදී පදාර්ථයේ උෂ්ණත්වය වෙනස් නොවීමට හේතුව කුමක්ද?</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q4" value="1"> පදාර්ථය තාපය අවශෝෂණය කර ගැනීම සම්පූර්ණයෙන්ම නැවැත්වීම</label>
+        <label class="option-label"><input type="radio" name="q4" value="2"> සපයන තාපය අන්තර් අණුක ආකර්ෂණ බන්ධන බිඳීම සඳහා වැය වීම</label>
+        <label class="option-label"><input type="radio" name="q4" value="3"> අණුවල මධ්‍යන්‍ය චාලක ශක්තිය ශුන්‍ය බවට පත්වීම</label>
+        <label class="option-label"><input type="radio" name="q4" value="4"> පරිසරයට මුළු තාපයම සංවහනය මගින් පිටවීම</label>
+      </div>
+      <div class="feedback" id="q4-fb"></div>
+    </div>
 
-        let score = 0;
-        const cardContainer = document.getElementById('card-container');
-        const bins = document.querySelectorAll('.bin');
-        const scoreDisplay = document.getElementById('score');
+    <!-- Q5 -->
+    <div class="mcq-card" id="q5-card">
+      <div class="question-title">5. මාධ්‍ය අංශුවල සහභාගීත්වයකින් තොරව, රික්තයක් තුළින් පවා තාපය සම්ප්‍රේෂණය විය හැකි ක්‍රමය කුමක්ද?</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q5" value="1"> සන්නයනය</label>
+        <label class="option-label"><input type="radio" name="q5" value="2"> සංවහනය</label>
+        <label class="option-label"><input type="radio" name="q5" value="3"> විකිරණය</label>
+        <label class="option-label"><input type="radio" name="q5" value="4"> වාෂ්පීකරණය</label>
+      </div>
+      <div class="feedback" id="q5-fb"></div>
+    </div>
 
-        // කාඩ්පත් අහඹු ලෙස කලවම් කිරීම
-        allOrganisms.sort(() => Math.random() - 0.5);
+    <!-- Q6 -->
+    <div class="mcq-card" id="q6-card">
+      <div class="question-title">6. 12 V වෝල්ටීයතාවකින් ක්‍රියා කරන බල්බයක් හරහා 2 A ධාරාවක් ගලයි නම්, එම බල්බයේ ක්ෂමතාව වන්නේ,</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q6" value="1"> 6 W</label>
+        <label class="option-label"><input type="radio" name="q6" value="2"> 14 W</label>
+        <label class="option-label"><input type="radio" name="q6" value="3"> 24 W</label>
+        <label class="option-label"><input type="radio" name="q6" value="4"> 288 W</label>
+      </div>
+      <div class="feedback" id="q6-fb"></div>
+    </div>
 
-        // කාඩ්පත් තිරය මත නිර්මාණය කිරීම
-        allOrganisms.forEach((org, index) => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerText = org.name;
-            card.draggable = true;
-            card.id = 'org-' + index;
-            card.setAttribute('data-group', org.group);
-            
-            card.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', e.target.id);
-            });
+    <!-- Q7 -->
+    <div class="mcq-card" id="q7-card">
+      <div class="question-title">7. විද්‍යුත් ශක්තිය මැනීමේ වාණිජ ඒකකය වන කිලෝවොට් පැය 1ක් (1 kWh) ජූල් (J) කීයකට සමාන වේද?</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q7" value="1"> 1 000 J</label>
+        <label class="option-label"><input type="radio" name="q7" value="2"> 60 000 J</label>
+        <label class="option-label"><input type="radio" name="q7" value="3"> 360 000 J</label>
+        <label class="option-label"><input type="radio" name="q7" value="4"> 3 600 000 J (3.6 × 10⁶ J)</label>
+      </div>
+      <div class="feedback" id="q7-fb"></div>
+    </div>
 
-            cardContainer.appendChild(card);
-        });
+    <!-- Q8 -->
+    <div class="mcq-card" id="q8-card">
+      <div class="question-title">8. ගෘහ විද්‍යුත් පරිපථයක පුද්ගලයෙකු විදුලි සැර වැදීමෙන් ආරක්ෂා කර ගැනීම සඳහා ක්‍රියාත්මක වන උපාංගය කුමක්ද?</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q8" value="1"> සිඟිති පරිපථ බිඳිනය (MCB)</label>
+        <label class="option-label"><input type="radio" name="q8" value="2"> ශේෂ ධාරා පරිපථ බිඳිනය (RCCB)</label>
+        <label class="option-label"><input type="radio" name="q8" value="3"> සේවා විලායකය (Service Fuse)</label>
+        <label class="option-label"><input type="radio" name="q8" value="4"> විදුලි මීටරය</label>
+      </div>
+      <div class="feedback" id="q8-fb"></div>
+    </div>
 
-        // Drop ක්‍රියාවලි සැකසීම
-        bins.forEach(bin => {
-            bin.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                bin.classList.add('hover');
-            });
+    <!-- Q9 -->
+    <div class="mcq-card" id="q9-card">
+      <div class="question-title">9. ගෘහ විදුලි සැපයුමේ සජීවී (Live), උදාසීන (Neutral) සහ භූගත (Earth) රැහැන් සඳහා පිළිවෙළින් සම්මත වර්ණ කේතය වන්නේ,</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q9" value="1"> දුඹුරු, නිල්, කොළ</label>
+        <label class="option-label"><input type="radio" name="q9" value="2"> නිල්, දුඹුරු, කොළ</label>
+        <label class="option-label"><input type="radio" name="q9" value="3"> රතු, කොළ, කළු</label>
+        <label class="option-label"><input type="radio" name="q9" value="4"> කොළ, නිල්, දුඹුරු</label>
+      </div>
+      <div class="feedback" id="q9-fb"></div>
+    </div>
 
-            bin.addEventListener('dragleave', () => {
-                bin.classList.remove('hover');
-            });
+    <!-- Q10 -->
+    <div class="mcq-card" id="q10-card">
+      <div class="question-title">10. 1000 W ක්ෂමතාවක් ඇති විදුලි ඉස්ත්‍රික්කයක් දිනකට පැය 2 බැගින් දින 30ක් භාවිත කරන්නේ නම් වැයවන විද්‍යුත් ඒකක (kWh) ගණන කොපමණද?</div>
+      <div class="options">
+        <label class="option-label"><input type="radio" name="q10" value="1"> 20 kWh</label>
+        <label class="option-label"><input type="radio" name="q10" value="2"> 30 kWh</label>
+        <label class="option-label"><input type="radio" name="q10" value="3"> 60 kWh</label>
+        <label class="option-label"><input type="radio" name="q10" value="4"> 120 kWh</label>
+      </div>
+      <div class="feedback" id="q10-fb"></div>
+    </div>
 
-            bin.addEventListener('drop', (e) => {
-                e.preventDefault();
-                bin.classList.remove('hover');
-                
-                const cardId = e.dataTransfer.getData('text/plain');
-                const card = document.getElementById(cardId);
-                
-                const correctGroup = card.getAttribute('data-group');
-                const targetGroup = bin.getAttribute('data-target');
+    <button type="button" class="btn-submit" onclick="gradeQuiz()">පිළිතුරු පරීක්ෂා කරන්න</button>
+  </form>
 
-                if (correctGroup === targetGroup) {
-                    bin.appendChild(card);
-                    card.draggable = false;
-                    card.style.backgroundColor = '#2ecc71'; // නිවැරදි නම් කොළ පැහැ වේ
-                    card.style.cursor = 'default';
-                    score += 10;
-                    scoreDisplay.innerText = score;
-                    
-                    if(cardContainer.children.length === 0) {
-                        setTimeout(() => alert('නියමයි! ඔබ සියලුම ජීවීන් නිවැරදිව වර්ගීකරණය කර අවසන් කළා. මුළු ලකුණු: ' + score), 300);
-                    }
-                } else {
-                    bin.appendChild(card);
-                    card.draggable = false;
-                    card.style.backgroundColor = '#e74c3c'; // වැරදි නම් රතු පැහැ වේ
-                    card.style.cursor = 'default';
-                    score -= 5;
-                    scoreDisplay.innerText = score;
-                    alert('වැරදියි! එම ජීවියා අදාළ වර්ගීකරණ කාණ්ඩයට අයත් නොවේ. නැවත උත්සාහ කරන්න.');
-                }
-            });
-        });
-    </script>
+  <div id="score-board">
+    <h2 id="score-text">ලකුණු: 0 / 10</h2>
+    <p id="score-desc"></p>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = {
+    q1: { val: "3", exp: "නිරපේක්ෂ ශුන්‍යය (0 K) සෙල්සියස් පරිමාණයෙන් -273.15 °C වේ." },
+    q2: { val: "2", exp: "තාප ධාරිතාවේ ඒකකය කෙල්විනයට ජූල් (J K⁻¹) හෝ J °C⁻¹ වේ." },
+    q3: { val: "2", exp: "Q = mcθ සූත්‍රය අනුව: Q = 2 kg × 4200 J kg⁻¹ K⁻¹ × 10 K = 84 000 J." },
+    q4: { val: "2", exp: "අවස්ථා විපර්යාසයේදී සපයන තාපය (ගුප්ත තාපය) වැයවන්නේ අන්තර් අණුක ආකර්ෂණ බන්ධන බිඳීමටය." },
+    q5: { val: "3", exp: "විකිරණයේදී තාපය විද්‍යුත් චුම්බක තරංග ලෙස ගමන් කරන බැවින් මාධ්‍යයක් අවශ්‍ය නොවේ." },
+    q6: { val: "3", exp: "P = VI සූත්‍රය අනුව: P = 12 V × 2 A = 24 W." },
+    q7: { val: "4", exp: "1 kWh = 1000 W × 3600 s = 3 600 000 J (3.6 × 10⁶ J)." },
+    q8: { val: "2", exp: "ශේෂ ධාරා පරිපථ බිඳිනය (RCCB) විදුලි කාන්දුවකදී පරිපථය විසන්ධි කර මිනිස් ජීවිත ආරක්ෂා කරයි." },
+    q9: { val: "1", exp: "නව සම්මතයට අනුව සජීවී (L) දුඹුරුද, උදාසීන (N) නිල්ද, භූගත (E) කොළ පැහැයද ගනී." },
+    q10: { val: "3", exp: "වැයවන ඒකක = (1000 W / 1000) × 2 h × 30 = 60 kWh." }
+  };
+
+  function gradeQuiz() {
+    let score = 0;
+    const form = document.getElementById("quiz-form");
+
+    for (let key in correctAnswers) {
+      const selected = form.querySelector(`input[name="${key}"]:checked`);
+      const fb = document.getElementById(`${key}-fb`);
+      const card = document.getElementById(`${key}-card`);
+      fb.style.display = "block";
+
+      if (selected && selected.value === correctAnswers[key].val) {
+        score++;
+        fb.style.background = "#dcfce7";
+        fb.style.color = "#166534";
+        fb.style.border = "1px solid #86efac";
+        fb.innerHTML = `<strong>නිවැරදියි!</strong> ${correctAnswers[key].exp}`;
+        card.style.borderColor = "#86efac";
+      } else {
+        fb.style.background = "#fee2e2";
+        fb.style.color = "#991b1b";
+        fb.style.border = "1px solid #fca5a5";
+        fb.innerHTML = `<strong>වැරදියි!</strong> නිවැරදි පිළිතුර: ${correctAnswers[key].val} වන තේරීමයි. (${correctAnswers[key].exp})`;
+        card.style.borderColor = "#fca5a5";
+      }
+    }
+
+    const sb = document.getElementById("score-board");
+    const st = document.getElementById("score-text");
+    const sd = document.getElementById("score-desc");
+    sb.style.display = "block";
+    st.textContent = `ඔබේ ලකුණු සංඛ්‍යාව: ${score} / 10`;
+
+    if (score >= 8) {
+      sd.textContent = "ඉතා විශිෂ්ටයි! ඔබ පාඩම් දෙක පිළිබඳ මනා අවබෝධයක් ලබා ඇත.";
+    } else if (score >= 5) {
+      sd.textContent = "හොඳ සාමාර්ථයක්! වැරදුණු කරුණු නැවත අධ්‍යයනය කරන්න.";
+    } else {
+      sd.textContent = "නැවත පාඩම් කර උත්සාහ කරන්න!";
+    }
+
+    sb.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
 </body>
 </html>
