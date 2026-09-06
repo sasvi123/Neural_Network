@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G.C.E. O/L විද්‍යාව - 9 හා 10 පාඩම් බහුවරණ ප්‍රශ්නාවලිය</title>
+  <title>G.C.E. O/L විද්‍යාව - 9 වන පාඩම: තාපය බහුවරණ ප්‍රශ්නාවලිය</title>
   <style>
     :root {
-      --primary: #1e3a8a;
-      --secondary: #2563eb;
-      --bg: #f8fafc;
+      --primary: #c2410c;
+      --secondary: #ea580c;
+      --bg: #fff7ed;
       --card-bg: #ffffff;
       --text: #1e293b;
       --correct: #16a34a;
       --wrong: #dc2626;
-      --border: #e2e8f0;
+      --border: #fed7aa;
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,6 +30,7 @@
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
     }
     h1 {
       text-align: center;
@@ -39,16 +40,17 @@
     }
     .subtitle {
       text-align: center;
-      color: #64748b;
+      color: #7c2d12;
       font-size: 1rem;
       margin-bottom: 25px;
+      font-weight: 500;
     }
     .mcq-card {
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 20px;
-      background: #fafafa;
+      background: #fffaf5;
     }
     .question-title {
       font-weight: 600;
@@ -64,14 +66,14 @@
       display: flex;
       align-items: center;
       padding: 10px 14px;
-      border: 1px solid var(--border);
+      border: 1px solid #fed7aa;
       border-radius: 6px;
       cursor: pointer;
       background: #fff;
       transition: all 0.2s;
     }
     .option-label:hover {
-      background: #eff6ff;
+      background: #ffedd5;
       border-color: var(--secondary);
     }
     .option-label input {
@@ -87,7 +89,7 @@
     .btn-submit {
       display: block;
       width: 100%;
-      max-width: 250px;
+      max-width: 260px;
       margin: 30px auto;
       padding: 14px;
       background: var(--primary);
@@ -106,7 +108,7 @@
       display: none;
       text-align: center;
       padding: 20px;
-      background: #eff6ff;
+      background: #ffedd5;
       border: 2px solid var(--secondary);
       border-radius: 8px;
       margin-top: 25px;
@@ -121,125 +123,125 @@
 
 <div class="container">
   <h1>අ.පො.ස. (සා.පෙළ) විද්‍යාව - බහුවරණ ප්‍රශ්නාවලිය</h1>
-  <div class="subtitle">9 වන පාඩම: තාපය | 10 වන පාඩම: විද්‍යුත් උපකරණවල ජවය හා ශක්තිය</div>
+  <div class="subtitle">09 වන පාඩම: තාපය (Heat)</div>
 
   <form id="quiz-form">
     <!-- Q1 -->
     <div class="mcq-card" id="q1-card">
-      <div class="question-title">1. නිරපේක්ෂ ශුන්‍ය උෂ්ණත්වයට අනුරූප වන සෙල්සියස් උෂ්ණත්ව අගය කුමක්ද?</div>
+      <div class="question-title">1. උෂ්ණත්වය මැනීමේ අන්තර්ජාතික (SI) සම්මත ඒකකය වන්නේ,</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q1" value="1"> 0 °C</label>
-        <label class="option-label"><input type="radio" name="q1" value="2"> -100 °C</label>
-        <label class="option-label"><input type="radio" name="q1" value="3"> -273.15 °C</label>
-        <label class="option-label"><input type="radio" name="q1" value="4"> 273.15 °C</label>
+        <label class="option-label"><input type="radio" name="q1" value="1"> සෙල්සියස් අංශක (°C)</label>
+        <label class="option-label"><input type="radio" name="q1" value="2"> ෆැරන්හයිට් අංශක (°F)</label>
+        <label class="option-label"><input type="radio" name="q1" value="3"> කෙල්වින් (K)</label>
+        <label class="option-label"><input type="radio" name="q1" value="4"> ජූල් (J)</label>
       </div>
       <div class="feedback" id="q1-fb"></div>
     </div>
 
     <!-- Q2 -->
     <div class="mcq-card" id="q2-card">
-      <div class="question-title">2. තාප ධාරිතාව (Heat Capacity) මනින සම්මත අන්තර්ජාතික (SI) ඒකකය වන්නේ,</div>
+      <div class="question-title">2. නිරපේක්ෂ ශුන්‍ය උෂ්ණත්වයට (0 K) අනුරූප වන සෙල්සියස් පරිමාණයේ අගය කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q2" value="1"> J</label>
-        <label class="option-label"><input type="radio" name="q2" value="2"> J K⁻¹</label>
-        <label class="option-label"><input type="radio" name="q2" value="3"> J kg⁻¹ K⁻¹</label>
-        <label class="option-label"><input type="radio" name="q2" value="4"> J kg⁻¹</label>
+        <label class="option-label"><input type="radio" name="q2" value="1"> 0 °C</label>
+        <label class="option-label"><input type="radio" name="q2" value="2"> -100 °C</label>
+        <label class="option-label"><input type="radio" name="q2" value="3"> -273.15 °C</label>
+        <label class="option-label"><input type="radio" name="q2" value="4"> 273.15 °C</label>
       </div>
       <div class="feedback" id="q2-fb"></div>
     </div>
 
     <!-- Q3 -->
     <div class="mcq-card" id="q3-card">
-      <div class="question-title">3. 2 kg ක ජල ස්කන්ධයක උෂ්ණත්වය 10 K කින් ඉහළ නැංවීමට අවශ්‍ය තාප ප්‍රමාණය කොපමණද? (ජලයේ විශිෂ්ට තාප ධාරිතාව 4200 J kg⁻¹ K⁻¹ වේ)</div>
+      <div class="question-title">3. 0 °C ට වඩා ඉතා පහළ උෂ්ණත්ව මැනීම සඳහා වීදුරු-රසදිය උෂ්ණත්වමානයට වඩා වීදුරු-මද්‍යසාර උෂ්ණත්වමානය සුදුසු වීමට හේතුව කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q3" value="1"> 42 000 J</label>
-        <label class="option-label"><input type="radio" name="q3" value="2"> 84 000 J</label>
-        <label class="option-label"><input type="radio" name="q3" value="3"> 21 000 J</label>
-        <label class="option-label"><input type="radio" name="q3" value="4"> 8 400 J</label>
+        <label class="option-label"><input type="radio" name="q3" value="1"> මද්‍යසාරවල තාපාංකය රසදියට වඩා වැඩි වීම</label>
+        <label class="option-label"><input type="radio" name="q3" value="2"> එතනෝල්වල ද්‍රවාංකය -115 °C තරම් ඉතා පහළ අගයක් ගැනීම</label>
+        <label class="option-label"><input type="radio" name="q3" value="3"> මද්‍යසාර තාපය හොඳින් සන්නයනය කිරීම</label>
+        <label class="option-label"><input type="radio" name="q3" value="4"> රසදියවල ප්‍රසාරණය ඒකාකාරී නොවීම</label>
       </div>
       <div class="feedback" id="q3-fb"></div>
     </div>
 
     <!-- Q4 -->
     <div class="mcq-card" id="q4-card">
-      <div class="question-title">4. අවස්ථා විපර්යාසයකදී පදාර්ථයේ උෂ්ණත්වය වෙනස් නොවීමට හේතුව කුමක්ද?</div>
+      <div class="question-title">4. තාප ධාරිතාව (Heat Capacity) මනින සම්මත අන්තර්ජාතික ඒකකය වන්නේ,</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q4" value="1"> පදාර්ථය තාපය අවශෝෂණය කර ගැනීම සම්පූර්ණයෙන්ම නැවැත්වීම</label>
-        <label class="option-label"><input type="radio" name="q4" value="2"> සපයන තාපය අන්තර් අණුක ආකර්ෂණ බන්ධන බිඳීම සඳහා වැය වීම</label>
-        <label class="option-label"><input type="radio" name="q4" value="3"> අණුවල මධ්‍යන්‍ය චාලක ශක්තිය ශුන්‍ය බවට පත්වීම</label>
-        <label class="option-label"><input type="radio" name="q4" value="4"> පරිසරයට මුළු තාපයම සංවහනය මගින් පිටවීම</label>
+        <label class="option-label"><input type="radio" name="q4" value="1"> J</label>
+        <label class="option-label"><input type="radio" name="q4" value="2"> J K⁻¹</label>
+        <label class="option-label"><input type="radio" name="q4" value="3"> J kg⁻¹ K⁻¹</label>
+        <label class="option-label"><input type="radio" name="q4" value="4"> J kg⁻¹</label>
       </div>
       <div class="feedback" id="q4-fb"></div>
     </div>
 
     <!-- Q5 -->
     <div class="mcq-card" id="q5-card">
-      <div class="question-title">5. මාධ්‍ය අංශුවල සහභාගීත්වයකින් තොරව, රික්තයක් තුළින් පවා තාපය සම්ප්‍රේෂණය විය හැකි ක්‍රමය කුමක්ද?</div>
+      <div class="question-title">5. 2 kg ක ජල ස්කන්ධයක උෂ්ණත්වය 10 K කින් ඉහළ නැංවීමට අවශ්‍ය තාප ප්‍රමාණය කොපමණද? (ජලයේ විශිෂ්ට තාප ධාරිතාව 4200 J kg⁻¹ K⁻¹ වේ)</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q5" value="1"> සන්නයනය</label>
-        <label class="option-label"><input type="radio" name="q5" value="2"> සංවහනය</label>
-        <label class="option-label"><input type="radio" name="q5" value="3"> විකිරණය</label>
-        <label class="option-label"><input type="radio" name="q5" value="4"> වාෂ්පීකරණය</label>
+        <label class="option-label"><input type="radio" name="q5" value="1"> 42 000 J</label>
+        <label class="option-label"><input type="radio" name="q5" value="2"> 84 000 J</label>
+        <label class="option-label"><input type="radio" name="q5" value="3"> 21 000 J</label>
+        <label class="option-label"><input type="radio" name="q5" value="4"> 8 400 J</label>
       </div>
       <div class="feedback" id="q5-fb"></div>
     </div>
 
     <!-- Q6 -->
     <div class="mcq-card" id="q6-card">
-      <div class="question-title">6. 12 V වෝල්ටීයතාවකින් ක්‍රියා කරන බල්බයක් හරහා 2 A ධාරාවක් ගලයි නම්, එම බල්බයේ ක්ෂමතාව වන්නේ,</div>
+      <div class="question-title">6. පදාර්ථයක අවස්ථා විපර්යාසයක් සිදුවන විටදී තාපය ලබා දුන්නද උෂ්ණත්වය නොවෙනස්ව පවතින්නේ මන්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q6" value="1"> 6 W</label>
-        <label class="option-label"><input type="radio" name="q6" value="2"> 14 W</label>
-        <label class="option-label"><input type="radio" name="q6" value="3"> 24 W</label>
-        <label class="option-label"><input type="radio" name="q6" value="4"> 288 W</label>
+        <label class="option-label"><input type="radio" name="q6" value="1"> ලබා දෙන තාපය අන්තර් අණුක ආකර්ෂණ බන්ධන බිඳීම සඳහා වැය වන බැවින්</label>
+        <label class="option-label"><input type="radio" name="q6" value="2"> පදාර්ථය තාපය උරා ගැනීම සම්පූර්ණයෙන්ම නවත්වන බැවින්</label>
+        <label class="option-label"><input type="radio" name="q6" value="3"> අණුවල මධ්‍යන්‍ය චාලක ශක්තිය ශුන්‍ය වන බැවින්</label>
+        <label class="option-label"><input type="radio" name="q6" value="4"> සපයන තාපය සියල්ල පිටතට විකිරණය වන බැවින්</label>
       </div>
       <div class="feedback" id="q6-fb"></div>
     </div>
 
     <!-- Q7 -->
     <div class="mcq-card" id="q7-card">
-      <div class="question-title">7. විද්‍යුත් ශක්තිය මැනීමේ වාණිජ ඒකකය වන කිලෝවොට් පැය 1ක් (1 kWh) ජූල් (J) කීයකට සමාන වේද?</div>
+      <div class="question-title">7. 0 °C හි පවතින අයිස් 1 kg ක් 0 °C හි ජලය බවට පත් කිරීමට සැපයිය යුතු තාප ප්‍රමාණය (විලයනයේ විශිෂ්ට ගුප්ත තාපය) කොපමණද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q7" value="1"> 1 000 J</label>
-        <label class="option-label"><input type="radio" name="q7" value="2"> 60 000 J</label>
-        <label class="option-label"><input type="radio" name="q7" value="3"> 360 000 J</label>
-        <label class="option-label"><input type="radio" name="q7" value="4"> 3 600 000 J (3.6 × 10⁶ J)</label>
+        <label class="option-label"><input type="radio" name="q7" value="1"> 2.26 × 10⁶ J</label>
+        <label class="option-label"><input type="radio" name="q7" value="2"> 3.36 × 10⁵ J</label>
+        <label class="option-label"><input type="radio" name="q7" value="3"> 4200 J</label>
+        <label class="option-label"><input type="radio" name="q7" value="4"> 2100 J</label>
       </div>
       <div class="feedback" id="q7-fb"></div>
     </div>
 
     <!-- Q8 -->
     <div class="mcq-card" id="q8-card">
-      <div class="question-title">8. ගෘහ විද්‍යුත් පරිපථයක පුද්ගලයෙකු විදුලි සැර වැදීමෙන් ආරක්ෂා කර ගැනීම සඳහා ක්‍රියාත්මක වන උපාංගය කුමක්ද?</div>
+      <div class="question-title">8. විදුලි ඉස්ත්‍රික්ක සහ බත් පිසින උදුන්වල උෂ්ණත්වය පාලනය කිරීම සඳහා භාවිත වන උපාංගය කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q8" value="1"> සිඟිති පරිපථ බිඳිනය (MCB)</label>
-        <label class="option-label"><input type="radio" name="q8" value="2"> ශේෂ ධාරා පරිපථ බිඳිනය (RCCB)</label>
-        <label class="option-label"><input type="radio" name="q8" value="3"> සේවා විලායකය (Service Fuse)</label>
-        <label class="option-label"><input type="radio" name="q8" value="4"> විදුලි මීටරය</label>
+        <label class="option-label"><input type="radio" name="q8" value="1"> සංඛ්‍යාංක උෂ්ණත්වමානය</label>
+        <label class="option-label"><input type="radio" name="q8" value="2"> ගිල්ලුම් තාපකය</label>
+        <label class="option-label"><input type="radio" name="q8" value="3"> ද්විලෝහ පටිය (Bimetallic strip)</label>
+        <label class="option-label"><input type="radio" name="q8" value="4"> තර්මිස්ටරය</label>
       </div>
       <div class="feedback" id="q8-fb"></div>
     </div>
 
     <!-- Q9 -->
     <div class="mcq-card" id="q9-card">
-      <div class="question-title">9. ගෘහ විදුලි සැපයුමේ සජීවී (Live), උදාසීන (Neutral) සහ භූගත (Earth) රැහැන් සඳහා පිළිවෙළින් සම්මත වර්ණ කේතය වන්නේ,</div>
+      <div class="question-title">9. දහවල් කාලයේදී මුහුදු සුළං (Sea breeze) ඇතිවීමට මූලික වශයෙන් හේතු වන්නේ,</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q9" value="1"> දුඹුරු, නිල්, කොළ</label>
-        <label class="option-label"><input type="radio" name="q9" value="2"> නිල්, දුඹුරු, කොළ</label>
-        <label class="option-label"><input type="radio" name="q9" value="3"> රතු, කොළ, කළු</label>
-        <label class="option-label"><input type="radio" name="q9" value="4"> කොළ, නිල්, දුඹුරු</label>
+        <label class="option-label"><input type="radio" name="q9" value="1"> මුහුදු ජලයේ විශිෂ්ට තාප ධාරිතාවට වඩා ගොඩබිමේ විශිෂ්ට තාප ධාරිතාව අඩු වීම නිසා ගොඩබිම ඉක්මනින් රත් වීම</label>
+        <label class="option-label"><input type="radio" name="q9" value="2"> ගොඩබිමට වඩා මුහුදු ජලය ඉක්මනින් රත් වීම</label>
+        <label class="option-label"><input type="radio" name="q9" value="3"> මුහුදු ජලය මගින් තාපය සන්නයනය කිරීම</label>
+        <label class="option-label"><input type="radio" name="q9" value="4"> මුහුද ඉහළින් අඩු පීඩනයක් හට ගැනීම</label>
       </div>
       <div class="feedback" id="q9-fb"></div>
     </div>
 
     <!-- Q10 -->
     <div class="mcq-card" id="q10-card">
-      <div class="question-title">10. 1000 W ක්ෂමතාවක් ඇති විදුලි ඉස්ත්‍රික්කයක් දිනකට පැය 2 බැගින් දින 30ක් භාවිත කරන්නේ නම් වැයවන විද්‍යුත් ඒකක (kWh) ගණන කොපමණද?</div>
+      <div class="question-title">10. රික්තයක් තුළින් පවා පදාර්ථමය අංශුවල සහභාගීත්වයකින් තොරව තාපය සංක්‍රාමණය විය හැකි ක්‍රමය කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q10" value="1"> 20 kWh</label>
-        <label class="option-label"><input type="radio" name="q10" value="2"> 30 kWh</label>
-        <label class="option-label"><input type="radio" name="q10" value="3"> 60 kWh</label>
-        <label class="option-label"><input type="radio" name="q10" value="4"> 120 kWh</label>
+        <label class="option-label"><input type="radio" name="q10" value="1"> සන්නයනය</label>
+        <label class="option-label"><input type="radio" name="q10" value="2"> සංවහනය</label>
+        <label class="option-label"><input type="radio" name="q10" value="3"> විකිරණය</label>
+        <label class="option-label"><input type="radio" name="q10" value="4"> වාෂ්පීභවනය</label>
       </div>
       <div class="feedback" id="q10-fb"></div>
     </div>
@@ -255,16 +257,16 @@
 
 <script>
   const correctAnswers = {
-    q1: { val: "3", exp: "නිරපේක්ෂ ශුන්‍යය (0 K) සෙල්සියස් පරිමාණයෙන් -273.15 °C වේ." },
-    q2: { val: "2", exp: "තාප ධාරිතාවේ ඒකකය කෙල්විනයට ජූල් (J K⁻¹) හෝ J °C⁻¹ වේ." },
-    q3: { val: "2", exp: "Q = mcθ සූත්‍රය අනුව: Q = 2 kg × 4200 J kg⁻¹ K⁻¹ × 10 K = 84 000 J." },
-    q4: { val: "2", exp: "අවස්ථා විපර්යාසයේදී සපයන තාපය (ගුප්ත තාපය) වැයවන්නේ අන්තර් අණුක ආකර්ෂණ බන්ධන බිඳීමටය." },
-    q5: { val: "3", exp: "විකිරණයේදී තාපය විද්‍යුත් චුම්බක තරංග ලෙස ගමන් කරන බැවින් මාධ්‍යයක් අවශ්‍ය නොවේ." },
-    q6: { val: "3", exp: "P = VI සූත්‍රය අනුව: P = 12 V × 2 A = 24 W." },
-    q7: { val: "4", exp: "1 kWh = 1000 W × 3600 s = 3 600 000 J (3.6 × 10⁶ J)." },
-    q8: { val: "2", exp: "ශේෂ ධාරා පරිපථ බිඳිනය (RCCB) විදුලි කාන්දුවකදී පරිපථය විසන්ධි කර මිනිස් ජීවිත ආරක්ෂා කරයි." },
-    q9: { val: "1", exp: "නව සම්මතයට අනුව සජීවී (L) දුඹුරුද, උදාසීන (N) නිල්ද, භූගත (E) කොළ පැහැයද ගනී." },
-    q10: { val: "3", exp: "වැයවන ඒකක = (1000 W / 1000) × 2 h × 30 = 60 kWh." }
+    q1: { val: "3", exp: "උෂ්ණත්වය මැනීමේ අන්තර්ජාතික (SI) සම්මත ඒකකය කෙල්වින් (K) වේ." },
+    q2: { val: "3", exp: "නිරපේක්ෂ ශුන්‍යය (0 K) සෙල්සියස් අගයෙන් -273.15 °C වේ." },
+    q3: { val: "2", exp: "එතනෝල්වල ද්‍රවාංකය -115 °C වන නිසා 0 °C ට වඩා ඉතා පහළ අඩු උෂ්ණත්ව මැනීමට මද්‍යසාර උෂ්ණත්වමාන යොදා ගනී." },
+    q4: { val: "2", exp: "තාප ධාරිතාවේ ඒකකය කෙල්විනයට ජූල් (J K⁻¹) හෝ J °C⁻¹ වේ. (J kg⁻¹ K⁻¹ යනු විශිෂ්ට තාප ධාරිතාවේ ඒකකයයි)." },
+    q5: { val: "2", exp: "Q = mcθ සූත්‍රයෙන්: Q = 2 kg × 4200 J kg⁻¹ K⁻¹ × 10 K = 84 000 J." },
+    q6: { val: "1", exp: "අවස්ථා විපර්යාසයේදී සපයන තාපය (ගුප්ත තාපය) වැයවන්නේ අන්තර් අණුක බන්ධන බිඳීමට බැවින් උෂ්ණත්වය ඉහළ නොයයි." },
+    q7: { val: "2", exp: "අයිස්වල විලයනයේ විශිෂ්ට ගුප්ත තාපය 3.36 × 10⁵ J kg⁻¹ වේ." },
+    q8: { val: "3", exp: "අසමාන ප්‍රසාරණ සහිත ලෝහ දෙකකින් නිපදවූ ද්විලෝහ පටි ස්වයංක්‍රීය උෂ්ණත්ව පාලනය සඳහා යොදා ගනී." },
+    q9: { val: "1", exp: "පොළොවේ විශිෂ්ට තාප ධාරිතාව අඩු නිසා දහවල් කාලයේ ඉක්මනින් රත් වී ඉහළ නගින වාතය හේතුවෙන් මුහුදේ සිට ගොඩබිමට සුළං හමයි." },
+    q10: { val: "3", exp: "විකිරණය යනු විද්‍යුත් චුම්බක තරංග මගින් තාපය ගමන් කිරීම බැවින් මාධ්‍යයක සහභාගිත්වයක් අවශ්‍ය නොවේ." }
   };
 
   function gradeQuiz() {
@@ -300,11 +302,11 @@
     st.textContent = `ඔබේ ලකුණු සංඛ්‍යාව: ${score} / 10`;
 
     if (score >= 8) {
-      sd.textContent = "ඉතා විශිෂ්ටයි! ඔබ පාඩම් දෙක පිළිබඳ මනා අවබෝධයක් ලබා ඇත.";
+      sd.textContent = "ඉතා විශිෂ්ටයි! ඔබ තාපය පාඩම පිළිබඳ පූර්ණ අවබෝධයක් ලබා ඇත.";
     } else if (score >= 5) {
-      sd.textContent = "හොඳ සාමාර්ථයක්! වැරදුණු කරුණු නැවත අධ්‍යයනය කරන්න.";
+      sd.textContent = "හොඳ සාමාර්ථයක්! වැරදුණු ප්‍රශ්න හා විවරණ නැවත කියවා මතකය අලුත් කරගන්න.";
     } else {
-      sd.textContent = "නැවත පාඩම් කර උත්සාහ කරන්න!";
+      sd.textContent = "නැවත පෙළපොතේ තාපය පාඩම හොඳින් කියවා උත්සාහ කරන්න!";
     }
 
     sb.scrollIntoView({ behavior: 'smooth' });
