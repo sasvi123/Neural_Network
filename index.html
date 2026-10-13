@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G.C.E. O/L විද්‍යාව - 9 වන පාඩම: තාපය බහුවරණ ප්‍රශ්නාවලිය</title>
+  <title>G.C.E. O/L විද්‍යාව - 11 වන පාඩම: ඉලෙක්ට්‍රොනික විද්‍යාව බහුවරණ ප්‍රශ්නාවලිය</title>
   <style>
     :root {
-      --primary: #c2410c;
-      --secondary: #ea580c;
-      --bg: #fff7ed;
+      --primary: #0284c7;
+      --secondary: #0369a1;
+      --bg: #f0f9ff;
       --card-bg: #ffffff;
-      --text: #1e293b;
+      --text: #0f172a;
       --correct: #16a34a;
       --wrong: #dc2626;
-      --border: #fed7aa;
+      --border: #bae6fd;
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,7 +40,7 @@
     }
     .subtitle {
       text-align: center;
-      color: #7c2d12;
+      color: var(--secondary);
       font-size: 1rem;
       margin-bottom: 25px;
       font-weight: 500;
@@ -50,7 +50,8 @@
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 20px;
-      background: #fffaf5;
+      background: #f8fafc;
+      transition: border-color 0.2s;
     }
     .question-title {
       font-weight: 600;
@@ -66,15 +67,15 @@
       display: flex;
       align-items: center;
       padding: 10px 14px;
-      border: 1px solid #fed7aa;
+      border: 1px solid #e2e8f0;
       border-radius: 6px;
       cursor: pointer;
       background: #fff;
       transition: all 0.2s;
     }
     .option-label:hover {
-      background: #ffedd5;
-      border-color: var(--secondary);
+      background: #e0f2fe;
+      border-color: var(--primary);
     }
     .option-label input {
       margin-right: 12px;
@@ -108,14 +109,14 @@
       display: none;
       text-align: center;
       padding: 20px;
-      background: #ffedd5;
-      border: 2px solid var(--secondary);
+      background: #e0f2fe;
+      border: 2px solid var(--primary);
       border-radius: 8px;
       margin-top: 25px;
     }
     #score-board h2 {
       margin: 0 0 10px 0;
-      color: var(--primary);
+      color: var(--secondary);
     }
   </style>
 </head>
@@ -123,125 +124,125 @@
 
 <div class="container">
   <h1>අ.පො.ස. (සා.පෙළ) විද්‍යාව - බහුවරණ ප්‍රශ්නාවලිය</h1>
-  <div class="subtitle">09 වන පාඩම: තාපය (Heat)</div>
+  <div class="subtitle">11 වන පාඩම: ඉලෙක්ට්‍රොනික විද්‍යාව (Electronics)</div>
 
   <form id="quiz-form">
     <!-- Q1 -->
     <div class="mcq-card" id="q1-card">
-      <div class="question-title">1. උෂ්ණත්වය මැනීමේ අන්තර්ජාතික (SI) සම්මත ඒකකය වන්නේ,</div>
+      <div class="question-title">1. පහත සඳහන් ද්‍රව්‍ය අතරින් නිසග (ස්වාභාවික) අර්ධ සන්නායකයක් වන්නේ කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q1" value="1"> සෙල්සියස් අංශක (°C)</label>
-        <label class="option-label"><input type="radio" name="q1" value="2"> ෆැරන්හයිට් අංශක (°F)</label>
-        <label class="option-label"><input type="radio" name="q1" value="3"> කෙල්වින් (K)</label>
-        <label class="option-label"><input type="radio" name="q1" value="4"> ජූල් (J)</label>
+        <label class="option-label"><input type="radio" name="q1" value="1"> තඹ (Cu)</label>
+        <label class="option-label"><input type="radio" name="q1" value="2"> සිලිකන් (Si)</label>
+        <label class="option-label"><input type="radio" name="q1" value="3"> කාබන් (මිනිරන්)</label>
+        <label class="option-label"><input type="radio" name="q1" value="4"> ඇලුමිනියම් (Al)</label>
       </div>
       <div class="feedback" id="q1-fb"></div>
     </div>
 
     <!-- Q2 -->
     <div class="mcq-card" id="q2-card">
-      <div class="question-title">2. නිරපේක්ෂ ශුන්‍ය උෂ්ණත්වයට (0 K) අනුරූප වන සෙල්සියස් පරිමාණයේ අගය කුමක්ද?</div>
+      <div class="question-title">2. p-වර්ගයේ අර්ධ සන්නායකයක් සාදා ගැනීම සඳහා සිලිකන් (Si) පදනමට මාත්‍රණය කළ යුතු අපද්‍රව්‍ය මූලද්‍රව්‍යය කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q2" value="1"> 0 °C</label>
-        <label class="option-label"><input type="radio" name="q2" value="2"> -100 °C</label>
-        <label class="option-label"><input type="radio" name="q2" value="3"> -273.15 °C</label>
-        <label class="option-label"><input type="radio" name="q2" value="4"> 273.15 °C</label>
+        <label class="option-label"><input type="radio" name="q2" value="1"> පොස්පරස් (P)</label>
+        <label class="option-label"><input type="radio" name="q2" value="2"> ආසනික් (As)</label>
+        <label class="option-label"><input type="radio" name="q2" value="3"> බෝරෝන් (B)</label>
+        <label class="option-label"><input type="radio" name="q2" value="4"> ඇන්ටිමනි (Sb)</label>
       </div>
       <div class="feedback" id="q2-fb"></div>
     </div>
 
     <!-- Q3 -->
     <div class="mcq-card" id="q3-card">
-      <div class="question-title">3. 0 °C ට වඩා ඉතා පහළ උෂ්ණත්ව මැනීම සඳහා වීදුරු-රසදිය උෂ්ණත්වමානයට වඩා වීදුරු-මද්‍යසාර උෂ්ණත්වමානය සුදුසු වීමට හේතුව කුමක්ද?</div>
+      <div class="question-title">3. n-වර්ගයේ අර්ධ සන්නායකයක බහුතර ආරෝපණ වාහකයන් වන්නේ,</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q3" value="1"> මද්‍යසාරවල තාපාංකය රසදියට වඩා වැඩි වීම</label>
-        <label class="option-label"><input type="radio" name="q3" value="2"> එතනෝල්වල ද්‍රවාංකය -115 °C තරම් ඉතා පහළ අගයක් ගැනීම</label>
-        <label class="option-label"><input type="radio" name="q3" value="3"> මද්‍යසාර තාපය හොඳින් සන්නයනය කිරීම</label>
-        <label class="option-label"><input type="radio" name="q3" value="4"> රසදියවල ප්‍රසාරණය ඒකාකාරී නොවීම</label>
+        <label class="option-label"><input type="radio" name="q3" value="1"> නිදහස් ඉලෙක්ට්‍රෝන</label>
+        <label class="option-label"><input type="radio" name="q3" value="2"> කුහර (Holes)</label>
+        <label class="option-label"><input type="radio" name="q3" value="3"> ප්‍රෝටෝන</label>
+        <label class="option-label"><input type="radio" name="q3" value="4"> ධන අයන</label>
       </div>
       <div class="feedback" id="q3-fb"></div>
     </div>
 
     <!-- Q4 -->
     <div class="mcq-card" id="q4-card">
-      <div class="question-title">4. තාප ධාරිතාව (Heat Capacity) මනින සම්මත අන්තර්ජාතික ඒකකය වන්නේ,</div>
+      <div class="question-title">4. සාමාන්‍ය සිලිකන් ඩයෝඩයක් පෙර නැඹුරු කළ විට එහි විභව බාධකය (Depletion barrier voltage) ආසන්න වශයෙන් කෙතෙක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q4" value="1"> J</label>
-        <label class="option-label"><input type="radio" name="q4" value="2"> J K⁻¹</label>
-        <label class="option-label"><input type="radio" name="q4" value="3"> J kg⁻¹ K⁻¹</label>
-        <label class="option-label"><input type="radio" name="q4" value="4"> J kg⁻¹</label>
+        <label class="option-label"><input type="radio" name="q4" value="1"> 0.1 V</label>
+        <label class="option-label"><input type="radio" name="q4" value="2"> 0.3 V</label>
+        <label class="option-label"><input type="radio" name="q4" value="3"> 0.7 V</label>
+        <label class="option-label"><input type="radio" name="q4" value="4"> 2.0 V</label>
       </div>
       <div class="feedback" id="q4-fb"></div>
     </div>
 
     <!-- Q5 -->
     <div class="mcq-card" id="q5-card">
-      <div class="question-title">5. 2 kg ක ජල ස්කන්ධයක උෂ්ණත්වය 10 K කින් ඉහළ නැංවීමට අවශ්‍ය තාප ප්‍රමාණය කොපමණද? (ජලයේ විශිෂ්ට තාප ධාරිතාව 4200 J kg⁻¹ K⁻¹ වේ)</div>
+      <div class="question-title">5. p-n සන්ධි ඩයෝඩයක් පසු නැඹුරු (Reverse bias) කළ විට සිදුවන්නේ කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q5" value="1"> 42 000 J</label>
-        <label class="option-label"><input type="radio" name="q5" value="2"> 84 000 J</label>
-        <label class="option-label"><input type="radio" name="q5" value="3"> 21 000 J</label>
-        <label class="option-label"><input type="radio" name="q5" value="4"> 8 400 J</label>
+        <label class="option-label"><input type="radio" name="q5" value="1"> ක්ෂය කලාපයේ පළල අඩු වී විශාල ධාරාවක් ගලා යයි.</label>
+        <label class="option-label"><input type="radio" name="q5" value="2"> ක්ෂය කලාපයේ පළල වැඩි වන අතර ප්‍රායෝගිකව ධාරාව ගලා නොයයි.</label>
+        <label class="option-label"><input type="radio" name="q5" value="3"> ඩයෝඩයේ ප්‍රතිරෝධය සම්පූර්ණයෙන්ම ශුන්‍ය වේ.</label>
+        <label class="option-label"><input type="radio" name="q5" value="4"> ඩයෝඩයෙන් ආලෝකය විමෝචනය වේ.</label>
       </div>
       <div class="feedback" id="q5-fb"></div>
     </div>
 
     <!-- Q6 -->
     <div class="mcq-card" id="q6-card">
-      <div class="question-title">6. පදාර්ථයක අවස්ථා විපර්යාසයක් සිදුවන විටදී තාපය ලබා දුන්නද උෂ්ණත්වය නොවෙනස්ව පවතින්නේ මන්ද?</div>
+      <div class="question-title">6. ප්‍රත්‍යාවර්ත ධාරාවක් සරල ධාරාවක් බවට පත් කිරීම (සෘජුකරණය) සඳහා භාවිත වන මූලික ඉලෙක්ට්‍රොනික උපාංගය කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q6" value="1"> ලබා දෙන තාපය අන්තර් අණුක ආකර්ෂණ බන්ධන බිඳීම සඳහා වැය වන බැවින්</label>
-        <label class="option-label"><input type="radio" name="q6" value="2"> පදාර්ථය තාපය උරා ගැනීම සම්පූර්ණයෙන්ම නවත්වන බැවින්</label>
-        <label class="option-label"><input type="radio" name="q6" value="3"> අණුවල මධ්‍යන්‍ය චාලක ශක්තිය ශුන්‍ය වන බැවින්</label>
-        <label class="option-label"><input type="radio" name="q6" value="4"> සපයන තාපය සියල්ල පිටතට විකිරණය වන බැවින්</label>
+        <label class="option-label"><input type="radio" name="q6" value="1"> ධාරිත්‍රකය</label>
+        <label class="option-label"><input type="radio" name="q6" value="2"> ප්‍රතිරෝධකය</label>
+        <label class="option-label"><input type="radio" name="q6" value="3"> සන්ධි ඩයෝඩය</label>
+        <label class="option-label"><input type="radio" name="q6" value="4"> ප්‍රේරකය</label>
       </div>
       <div class="feedback" id="q6-fb"></div>
     </div>
 
     <!-- Q7 -->
     <div class="mcq-card" id="q7-card">
-      <div class="question-title">7. 0 °C හි පවතින අයිස් 1 kg ක් 0 °C හි ජලය බවට පත් කිරීමට සැපයිය යුතු තාප ප්‍රමාණය (විලයනයේ විශිෂ්ට ගුප්ත තාපය) කොපමණද?</div>
+      <div class="question-title">7. පූර්ණ තරංග සේතු සෘජුකාරක පරිපථයක් (Bridge Rectifier) නිර්මාණය කිරීම සඳහා අවශ්‍ය වන අවම ඩයෝඩ සංඛ්‍යාව කොපමණද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q7" value="1"> 2.26 × 10⁶ J</label>
-        <label class="option-label"><input type="radio" name="q7" value="2"> 3.36 × 10⁵ J</label>
-        <label class="option-label"><input type="radio" name="q7" value="3"> 4200 J</label>
-        <label class="option-label"><input type="radio" name="q7" value="4"> 2100 J</label>
+        <label class="option-label"><input type="radio" name="q7" value="1"> 1 කි</label>
+        <label class="option-label"><input type="radio" name="q7" value="2"> 2 කි</label>
+        <label class="option-label"><input type="radio" name="q7" value="3"> 4 කි</label>
+        <label class="option-label"><input type="radio" name="q7" value="4"> 6 කි</label>
       </div>
       <div class="feedback" id="q7-fb"></div>
     </div>
 
     <!-- Q8 -->
     <div class="mcq-card" id="q8-card">
-      <div class="question-title">8. විදුලි ඉස්ත්‍රික්ක සහ බත් පිසින උදුන්වල උෂ්ණත්වය පාලනය කිරීම සඳහා භාවිත වන උපාංගය කුමක්ද?</div>
+      <div class="question-title">8. සෘජුකාරක පරිපථයකින් ලැබෙන ස්පන්දන සරල ධාරාව ඒකාකාරී සරල ධාරාවක් බවට පත් කිරීම (සුමටනය) සඳහා බහුලව භාවිත කරන්නේ,</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q8" value="1"> සංඛ්‍යාංක උෂ්ණත්වමානය</label>
-        <label class="option-label"><input type="radio" name="q8" value="2"> ගිල්ලුම් තාපකය</label>
-        <label class="option-label"><input type="radio" name="q8" value="3"> ද්විලෝහ පටිය (Bimetallic strip)</label>
-        <label class="option-label"><input type="radio" name="q8" value="4"> තර්මිස්ටරය</label>
+        <label class="option-label"><input type="radio" name="q8" value="1"> සමාන්තරගතව සම්බන්ධ කළ ධාරිත්‍රකයක් (Capacitor)</label>
+        <label class="option-label"><input type="radio" name="q8" value="2"> ශ්‍රේණිගතව සම්බන්ධ කළ ඩයෝඩයක්</label>
+        <label class="option-label"><input type="radio" name="q8" value="3"> ආලෝක විමෝචක ඩයෝඩයක් (LED)</label>
+        <label class="option-label"><input type="radio" name="q8" value="4"> තාප සංවේදී ප්‍රතිරෝධකයක් (Thermistor)</label>
       </div>
       <div class="feedback" id="q8-fb"></div>
     </div>
 
     <!-- Q9 -->
     <div class="mcq-card" id="q9-card">
-      <div class="question-title">9. දහවල් කාලයේදී මුහුදු සුළං (Sea breeze) ඇතිවීමට මූලික වශයෙන් හේතු වන්නේ,</div>
+      <div class="question-title">9. ද්විධ්‍රැව සන්ධි ට්‍රාන්සිස්ටරයක (BJT) පවතින අග්‍ර ත්‍රිත්වය නිවැරදිව දක්වා ඇත්තේ කවරේද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q9" value="1"> මුහුදු ජලයේ විශිෂ්ට තාප ධාරිතාවට වඩා ගොඩබිමේ විශිෂ්ට තාප ධාරිතාව අඩු වීම නිසා ගොඩබිම ඉක්මනින් රත් වීම</label>
-        <label class="option-label"><input type="radio" name="q9" value="2"> ගොඩබිමට වඩා මුහුදු ජලය ඉක්මනින් රත් වීම</label>
-        <label class="option-label"><input type="radio" name="q9" value="3"> මුහුදු ජලය මගින් තාපය සන්නයනය කිරීම</label>
-        <label class="option-label"><input type="radio" name="q9" value="4"> මුහුද ඉහළින් අඩු පීඩනයක් හට ගැනීම</label>
+        <label class="option-label"><input type="radio" name="q9" value="1"> ඇනෝඩය, කැතෝඩය, ගේට්ටුව</label>
+        <label class="option-label"><input type="radio" name="q9" value="2"> විමෝචකය (E), පාදම (B), සංග්‍රාහකය (C)</label>
+        <label class="option-label"><input type="radio" name="q9" value="3"> ප්‍රභවය, කාණුව, ගේට්ටුව</label>
+        <label class="option-label"><input type="radio" name="q9" value="4"> ධන අග්‍රය, සෘණ අග්‍රය, උදාසීන අග්‍රය</label>
       </div>
       <div class="feedback" id="q9-fb"></div>
     </div>
 
     <!-- Q10 -->
     <div class="mcq-card" id="q10-card">
-      <div class="question-title">10. රික්තයක් තුළින් පවා පදාර්ථමය අංශුවල සහභාගීත්වයකින් තොරව තාපය සංක්‍රාමණය විය හැකි ක්‍රමය කුමක්ද?</div>
+      <div class="question-title">10. ස්වයංක්‍රීයව අඳුරේදී ක්‍රියාත්මක වන වීදි ලාම්පු පරිපථයක ආලෝකය හඳුනාගැනීමේ සංවේදකය ලෙස යොදා ගන්නා උපාංගය කුමක්ද?</div>
       <div class="options">
-        <label class="option-label"><input type="radio" name="q10" value="1"> සන්නයනය</label>
-        <label class="option-label"><input type="radio" name="q10" value="2"> සංවහනය</label>
-        <label class="option-label"><input type="radio" name="q10" value="3"> විකිරණය</label>
-        <label class="option-label"><input type="radio" name="q10" value="4"> වාෂ්පීභවනය</label>
+        <label class="option-label"><input type="radio" name="q10" value="1"> ආලෝක විමෝචක ඩයෝඩය (LED)</label>
+        <label class="option-label"><input type="radio" name="q10" value="2"> ආලෝක සංවේදී ප්‍රතිරෝධකය (LDR)</label>
+        <label class="option-label"><input type="radio" name="q10" value="3"> සීනුව (Buzzer)</label>
+        <label class="option-label"><input type="radio" name="q10" value="4"> වියළි කෝෂය</label>
       </div>
       <div class="feedback" id="q10-fb"></div>
     </div>
@@ -257,16 +258,16 @@
 
 <script>
   const correctAnswers = {
-    q1: { val: "3", exp: "උෂ්ණත්වය මැනීමේ අන්තර්ජාතික (SI) සම්මත ඒකකය කෙල්වින් (K) වේ." },
-    q2: { val: "3", exp: "නිරපේක්ෂ ශුන්‍යය (0 K) සෙල්සියස් අගයෙන් -273.15 °C වේ." },
-    q3: { val: "2", exp: "එතනෝල්වල ද්‍රවාංකය -115 °C වන නිසා 0 °C ට වඩා ඉතා පහළ අඩු උෂ්ණත්ව මැනීමට මද්‍යසාර උෂ්ණත්වමාන යොදා ගනී." },
-    q4: { val: "2", exp: "තාප ධාරිතාවේ ඒකකය කෙල්විනයට ජූල් (J K⁻¹) හෝ J °C⁻¹ වේ. (J kg⁻¹ K⁻¹ යනු විශිෂ්ට තාප ධාරිතාවේ ඒකකයයි)." },
-    q5: { val: "2", exp: "Q = mcθ සූත්‍රයෙන්: Q = 2 kg × 4200 J kg⁻¹ K⁻¹ × 10 K = 84 000 J." },
-    q6: { val: "1", exp: "අවස්ථා විපර්යාසයේදී සපයන තාපය (ගුප්ත තාපය) වැයවන්නේ අන්තර් අණුක බන්ධන බිඳීමට බැවින් උෂ්ණත්වය ඉහළ නොයයි." },
-    q7: { val: "2", exp: "අයිස්වල විලයනයේ විශිෂ්ට ගුප්ත තාපය 3.36 × 10⁵ J kg⁻¹ වේ." },
-    q8: { val: "3", exp: "අසමාන ප්‍රසාරණ සහිත ලෝහ දෙකකින් නිපදවූ ද්විලෝහ පටි ස්වයංක්‍රීය උෂ්ණත්ව පාලනය සඳහා යොදා ගනී." },
-    q9: { val: "1", exp: "පොළොවේ විශිෂ්ට තාප ධාරිතාව අඩු නිසා දහවල් කාලයේ ඉක්මනින් රත් වී ඉහළ නගින වාතය හේතුවෙන් මුහුදේ සිට ගොඩබිමට සුළං හමයි." },
-    q10: { val: "3", exp: "විකිරණය යනු විද්‍යුත් චුම්බක තරංග මගින් තාපය ගමන් කිරීම බැවින් මාධ්‍යයක සහභාගිත්වයක් අවශ්‍ය නොවේ." }
+    q1: { val: "2", exp: "සිලිකන් (Si) සහ ජර්මේනියම් (Ge) යනු ස්වාභාවිකව පවතින සංයුජතා ඉලෙක්ට්‍රෝන 4 ක් සහිත නිසග අර්ධ සන්නායක වේ." },
+    q2: { val: "3", exp: "p-වර්ගයේ අර්ධ සන්නායක නිපදවීමට ත්‍රිසංයුජ මූලද්‍රව්‍ය (බෝරෝන්, ඇලුමිනියම් ආදිය) මාත්‍රණය කර කුහර බහුතර වාහකයන් බවට පත් කරයි." },
+    q3: { val: "1", exp: "n-වර්ගයේ අර්ධ සන්නායක තුළ පංචසංයුජ පරමාණු මාත්‍රණය කර ඇති බැවින් නිදහස් ඉලෙක්ට්‍රෝන බහුතර ආරෝපණ වාහකයන් වේ." },
+    q4: { val: "3", exp: "සිලිකන් p-n සන්ධි ඩයෝඩයක පෙර නැඹුරු බාධක වෝල්ටීයතාව ආසන්න වශයෙන් 0.7 V කි. (ජර්මේනියම් සඳහා එය 0.3 V පමණ වේ)." },
+    q5: { val: "2", exp: "පසු නැඹුරු කළ විට ක්ෂය කලාපයේ පළල වැඩි වන නිසා විභව බාධකය ඉහළ ගොස් ධාරාව ගලා යාම සම්පූර්ණයෙන්ම පාහේ අවහිර වේ." },
+    q6: { val: "3", exp: "ඩයෝඩයක් එක් දිශාවකට පමණක් ධාරාව ගලා යාමට ඉඩ සලසන බැවින් ප්‍රත්‍යාවර්ත ධාරා (AC) සරල ධාරා (DC) බවට පත් කිරීමට (සෘජුකරණයට) යොදා ගනී." },
+    q7: { val: "3", exp: "සේතු සෘජුකාරක පරිපථයකදී (Bridge Rectifier) සම්පූර්ණ තරංගයම සෘජුකරණය කිරීම සඳහා ඩයෝඩ 4 ක් විශේෂ ආකාරයකට සම්බන්ධ කරනු ලැබේ." },
+    q8: { val: "1", exp: "සෘජුකාරකයක ප්‍රතිදානයට සමාන්තරව සම්බන්ධ කළ ඉහළ ධාරිතාවකින් යුතු ධාරිත්‍රකයක් (Capacitor) මගින් රැළිති වෝල්ටීයතාව සුමට කරනු ලබයි." },
+    q9: { val: "2", exp: "ද්විධ්‍රැව ට්‍රාන්සිස්ටරයක විමෝචකය (Emitter - E), පාදම (Base - B), සහ සංග්‍රාහකය (Collector - C) ලෙස අග්‍ර තුනක් පවතී." },
+    q10: { val: "2", exp: "LDR (Light Dependent Resistor) මතට වැටෙන ආලෝක තීව්‍රතාව වැඩි වන විට එහි ප්‍රතිරෝධය අඩු වන අතර අඳුරේදී ප්‍රතිරෝධය විශාල ලෙස වැඩි වේ." }
   };
 
   function gradeQuiz() {
@@ -302,11 +303,11 @@
     st.textContent = `ඔබේ ලකුණු සංඛ්‍යාව: ${score} / 10`;
 
     if (score >= 8) {
-      sd.textContent = "ඉතා විශිෂ්ටයි! ඔබ තාපය පාඩම පිළිබඳ පූර්ණ අවබෝධයක් ලබා ඇත.";
+      sd.textContent = "ඉතා විශිෂ්ටයි! ඔබ ඉලෙක්ට්‍රොනික විද්‍යාව පාඩම පිළිබඳ ඉතා හොඳ අවබෝධයක් ලබා ඇත.";
     } else if (score >= 5) {
-      sd.textContent = "හොඳ සාමාර්ථයක්! වැරදුණු ප්‍රශ්න හා විවරණ නැවත කියවා මතකය අලුත් කරගන්න.";
+      sd.textContent = "හොඳ සාමාර්ථයක්! වැරදුණු ප්‍රශ්න හා විවරණ නැවත කියවා සංකල්ප තහවුරු කරගන්න.";
     } else {
-      sd.textContent = "නැවත පෙළපොතේ තාපය පාඩම හොඳින් කියවා උත්සාහ කරන්න!";
+      sd.textContent = "නැවත පෙළපොතේ 11 වන පාඩම හොඳින් කියවා ප්‍රශ්නාවලිය නැවත උත්සාහ කරන්න!";
     }
 
     sb.scrollIntoView({ behavior: 'smooth' });
